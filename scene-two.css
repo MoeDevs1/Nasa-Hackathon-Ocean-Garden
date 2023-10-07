@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('img/background.jpg');
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Cloud Animations */
+@keyframes driftCloud {
+    0% {
+        transform: translateX(5%);
+    }
+    100% {
+        transform: translateX(-90%);
+    }
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+}
+
+.cloud {
+    position: absolute;
+    background-image: url('clouds.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: driftCloud 35s linear infinite, fadeInOut 35s linear infinite;
+}
+
+/* Enhancements for cloud placements */
+.cloud1 {
+    left: 10%;
+    top: 1%;
+    width: 300px;
+    height: 300px;
+    animation-delay: 0s;
+}
+
+.cloud2 {
+    left: 60%;
+    top: 2%;
+    width: 300px;
+    height: 300px;
+    animation-delay: 0s;
+}
+
+.cloud3 {
+    left: 90%;
+    top: 2%;
+    width: 300px;
+    height: 300px;
+    animation-delay: 0s;
+}
+
+.cloud4 {
+    left: 40%;
+    top: 2%;
+    width: 300px;
+    height: 300px;
+    animation-delay: 0s;
+}
+
+/* Bubbles */
+.bubble {
+    position: absolute;
+    bottom: 10%;  /* Setting starting position at the bottom of the ocean */
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: riseBubble 5s infinite ease-in;
+    z-index: 100;
+}
+
+@keyframes riseBubble {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-15vh);
+        opacity: 0;
+    }
+}
+
+.bubble1 {
+    left: 20%;
+    width: 20px;
+    height: 20px;
+    animation-duration: 4s;
+}
+
+.bubble2 {
+    left: 40%;
+    width: 15px;
+    height: 15px;
+    animation-duration: 6s;
+}
+
+.bubble3 {
+    left: 60%;
+    width: 10px;
+    height: 10px;
+    animation-duration: 5s;
+}
+
+.bubble4 {
+    left: 80%;
+    width: 18px;
+    height: 18px;
+    animation-duration: 7s;
+}
+
+/* Waves */
+.wave, .ocean-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+    height: 20%;
+}
+
+.ocean-bottom {
+    background: rgba(103,228,255,255);
+    bottom: 0;
+    z-index: 1;
+}
+
+.wave {
+    background-image: url('https://gist.githubusercontent.com/geekboots-team/3fadc92db287cc40139e2346786a2ae1/raw/8673dcad52e59ca1e8489c7d481e8ee7ad217d35/wave.svg');
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    animation: waveMove 12.5s infinite ease-in-out alternate;
+}
+
+@keyframes waveMove {
+    0% {
+        background-position-x: 0%;
+    }
+    100% {
+        background-position-x: 100%;
+    }
+}
+
+/* Sun */
+.sun {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    width: 200px;
+    height: 200px;
+    background-color: #FFDE00;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 20px #FFDE0080,
+        0 0 0 40px #FFDE0040,
+        0 0 0 60px #FFDE0020,
+        0 0 0 80px #FFDE0010,
+        0 0 0 100px #FFDE0000,
+        0 0 40px 100px #FFDE0010;
+    animation:
+        sunrise 2s infinite linear forwards,
+        rays 2s 2s infinite linear;
+}
+
+@keyframes sunrise {
+    0% {
+        box-shadow: none;
+    }
+}
+
+@keyframes rays {
+    0% {
+        box-shadow: 
+            0 0 0 0 #FFDE0080,
+            0 0 0 20px #FFDE0080,
+            0 0 0 40px #FFDE0040,
+            0 0 0 60px #FFDE0020,
+            0 0 0 80px #FFDE0010,
+            0 0 40px 100px #FFDE0010;
+    }
+    100% {
+        box-shadow: 
+            0 0 0 20px #FFDE0080,
+            0 0 0 40px #FFDE0040,
+            0 0 0 60px #FFDE0020,
+            0 0 0 80px #FFDE0010,
+            0 0 0 100px #FFDE0000,
+            0 0 40px 100px #FFDE0010;
+    }
+}
